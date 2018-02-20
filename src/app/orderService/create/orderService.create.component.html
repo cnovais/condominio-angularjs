@@ -1,0 +1,72 @@
+<form class="form-horizontal" #f="ngForm">
+  <fieldset>
+    <legend>Criação de Ordem de Serviço</legend>
+    <div class="form-group">
+        <label for="select" class="col-lg-2 control-label">Tipo:</label>
+        <div class="col-lg-2">
+          <select class="form-control" id="select">
+            <option></option>
+            <option>Jardinagem</option>
+            <option>Tecnico</option>
+            <option>Hidraulico</option>
+            <option>outros</option>
+          </select>
+        </div>
+    </div>
+    <div class="form-group">
+      <label for="select" class="col-lg-2 control-label">Torre:</label>
+      <div class="col-lg-2">
+        <select class="form-control" id="select">
+          <option></option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+      </div>
+      <label for="select" class="col-lg-2 control-label">Lado:</label>
+      <div class="col-lg-2">
+        <select class="form-control" id="select">
+          <option></option>
+          <option>A</option>
+          <option>B</option>
+        </select>
+      </div>
+      <div class="col-lg-4">
+        <label for="select" class="col-lg-2 control-label">Ap:</label>
+        <div class="col-lg-4">
+            <input class="form-control" id="focusedInput" type="text" value="">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+        <label class="col-lg-2 control-label">Descrição</label>
+        <div class="col-lg-10">
+            <textarea class="form-control" rows="3" name="inputDescription" required [(ngModel)]="new_description" #Description="ngModel"></textarea>
+                <div *ngIf="Description.errors && (Description.dirty || Description.touched)"
+                     class="alert alert-danger">
+                  <div [hidden]="!Description.errors.required">
+                    O Campo descrição é obrigatorio.
+                  </div>
+                </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-lg-2 control-label">Nome do Morador</label>
+        <div class="col-lg-10">
+          <input type="text" class="form-control" name="inputResidentName"
+                 placeholder="Nome Morador" [(ngModel)]="new_residentName" #ResidentName="ngModel">
+          
+        </div>
+      </div>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="reset" class="btn btn-default" (click)="f.reset()">Cancel</button>
+        <button type="submit" class="btn btn-primary"
+                (click)="createPerson(new_lastName, new_firstName,
+                new_email, new_comments, new_options); f.reset()"
+                [disabled]="!f.form.valid">Salvar</button>
+      </div>
+    </div>
+  </fieldset>
+</form>

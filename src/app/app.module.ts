@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { DatabaseComponent } from './database/database.component';
 import { FormsComponent } from './forms/forms.component';
+import { OrderServiceCreateComponent } from './orderService/create/orderService.create.component';
 import { routing } from "./app.routing";
 
 @NgModule({
@@ -16,7 +17,8 @@ import { routing } from "./app.routing";
     NavbarComponent,
     HomeComponent,
     DatabaseComponent,
-    FormsComponent
+    FormsComponent,
+    OrderServiceCreateComponent
   ],
   imports: [
     BrowserModule,
